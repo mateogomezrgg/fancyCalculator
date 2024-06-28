@@ -11,7 +11,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #234;
   border-radius: 20px;
-  max-width: 500px;
+  max-width: 90vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -36,13 +37,13 @@ body {
 }
 
 button {
-  width: 110px;
-  height: 65px;
+  width: 100%;
+  height: 70px;
   border-radius: 10px;
   border: none;
   background-color: #678;
   color: #fff;
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: 600;
   cursor: pointer;
 }
@@ -77,4 +78,24 @@ button:active {
 
 .equalButton:active {
   background-color: #cc5555;
+}
+
+/* Media queries */
+@media (max-width: 600px) {
+  #display {
+    font-size: 2rem;
+  }
+  button {
+    height: 50px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  #display {
+    font-size: 3rem;
+  }
+  #keys {
+    padding: 20px;
+  }
 }
