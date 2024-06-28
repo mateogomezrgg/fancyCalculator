@@ -2,7 +2,7 @@ const display = document.getElementById("display");
 let isCalculated = false;
 
 const appendToDisplay = (input) => {
-  if (isCalculated) {
+  if (isCalculated && NaN) {
     display.value = "";
     isCalculated = false;
   }
@@ -15,7 +15,7 @@ const clearDisplay = () => {
 };
 
 const deleteLastOnDisplay = () => {
-  if (isCalculated) {
+  if (isCalculated && NaN) {
     display.value = "";
     isCalculated = false;
   } else {
