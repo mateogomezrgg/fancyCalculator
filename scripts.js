@@ -1,17 +1,28 @@
 const display = document.getElementById("display");
+let isCalculated = false;
 
 const appendToDisplay = (input) => {
+  if (isCalculated) {
+    display.value = "";
+    isCalculated = false;
+  }
   display.value += input;
 };
 
 const clearDisplay = () => {
   display.value = "";
+  isCalculated = false;
 };
 
 const deleteLastOnDisplay = () => {
-  let currentValue = display.value.split("");
-  currentValue.pop();
-  display.value = currentValue.join("");
+  if (isCalculated) {
+    display.value = "";
+    isCalculated = false;
+  } else {
+    let currentValue = display.value.split("");
+    currentValue.pop();
+    display.value = currentValue.join("");
+  }
 };
 
 const changeNumberSign = () => {
@@ -20,7 +31,9 @@ const changeNumberSign = () => {
 
 const calculate = () => {
   try {
-    display.value = eval(display.value);
+    const result = eval(display.value);
+    display.value = result;
+    isCalculated = true;
   } catch (e) {
     display.value = "Error";
   }
