@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 let isCalculated = false;
+const btnDelete = document.getElementById("btnDelete");
 
 const appendToDisplay = (input) => {
   if (isCalculated && NaN) {
@@ -12,6 +13,7 @@ const appendToDisplay = (input) => {
 const clearDisplay = () => {
   display.value = "";
   isCalculated = false;
+  btnDelete.classList.remove("btnDisabled");
 };
 
 const deleteLastOnDisplay = () => {
@@ -34,6 +36,7 @@ const calculate = () => {
     const result = eval(display.value);
     display.value = result;
     isCalculated = true;
+    btnDelete.classList.add("btnDisabled");
   } catch (e) {
     display.value = "Error";
   }

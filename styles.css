@@ -34,6 +34,8 @@ body {
   grid-template-columns: repeat(4, 1fr);
   gap: 5px;
   padding: 25px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 button {
@@ -78,6 +80,10 @@ button:active {
 
 .equalButton:active {
   background-color: #cc5555;
+}
+
+.btnDisabled {
+  pointer-events: none;
 }
 
 /* Media queries */
